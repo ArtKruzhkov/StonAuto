@@ -17,31 +17,27 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.classList.add('glass');
-      navbar.classList.remove('py-6');
-      navbar.classList.add('py-4');
     } else {
       navbar.classList.remove('glass');
-      navbar.classList.remove('py-4');
-      navbar.classList.add('py-6');
     }
   });
 
   // Animation Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  });
+  // const observer = new IntersectionObserver((entries) => {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.style.opacity = '1';
+  //       entry.target.style.transform = 'translateY(0)';
+  //     }
+  //   });
+  // });
 
-  document.querySelectorAll('.glass-card, .service-card').forEach((el, index) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-    observer.observe(el);
-  });
+  // document.querySelectorAll('.glass-card, .service-card').forEach((el, index) => {
+  //   el.style.opacity = '0';
+  //   el.style.transform = 'translateY(20px)';
+  //   el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+  //   observer.observe(el);
+  // });
 
   // Forms
   document.querySelectorAll('form').forEach((form) => {
