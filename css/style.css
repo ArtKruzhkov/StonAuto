@@ -160,14 +160,32 @@ body {
   transition: color 0.3s ease;
 }
 
-/* hover */
 .nav-link:hover {
   color: #0184ff;
 }
 
-/* активная ссылка */
 .nav-link.active {
   color: #0184ff;
+}
+
+.service-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d1d5db; /* text-gray-300 */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.service-pill:hover {
+  background: #0184ff;
+  color: white;
+  border-color: transparent;
 }
 
 .dropdown-link {
@@ -180,23 +198,12 @@ body {
   transition: color 0.3s ease;
 }
 
-/* hover */
 .dropdown-link:hover {
   color: #0184ff;
 }
 
 .partner-link {
   display: inline-block;
-  font-size: 2.875rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: #6b7280;
-  transition: all 0.3s ease;
-  padding: 4px 12px;
-}
-
-.partner-link:hover {
-  color: #0184ff;
 }
 
 .swiper-button-prev,
@@ -211,7 +218,7 @@ body {
 }
 
 .vinylwrap-img {
-  object-position: center 60%;
+  object-position: center 65%;
 }
 
 .review-card {
