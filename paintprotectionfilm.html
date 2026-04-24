@@ -44,7 +44,7 @@
               class="absolute left-0 top-full opacity-0 invisible glass rounded-xl px-4 py-4 group-hover:opacity-100 group-hover:visible transition-all duration-300 w-max">
               <div class="flex flex-col gap-2 text-xs tracking-wider uppercase text-[#9ca3af]">
                 <a href="paintprotectionfilm.html" class="dropdown-link">Paint Protection</a>
-                <a href="#" class="dropdown-link">Vinyl Wraps</a>
+                <a href="vinyl-wraps.html" class="dropdown-link">Vinyl Wraps</a>
                 <a href="#" class="dropdown-link">Window Tint</a>
                 <a href="#" class="dropdown-link">Ceramic Coating</a>
                 <a href="#" class="dropdown-link">Powder Coating</a>
@@ -77,7 +77,10 @@
     <section id="ppf" class="relative h-[68vh] flex items-center justify-center overflow-hidden">
       <!-- Background -->
       <div class="absolute inset-0 z-0">
-        <img src="img/ppf-img.webp" alt="hero-img" class="w-full h-full object-cover" />
+        <img
+          src="img/pages/ppf/ppf-img.webp"
+          alt="ppf-hero-img"
+          class="w-full h-full object-cover" />
         <div class="absolute inset-0 hero-gradient"></div>
       </div>
 
@@ -90,8 +93,7 @@
 
         <p
           class="text-white text-sm md:text-base tracking-[0.2em] uppercase mb-6 max-w-2xl mx-auto leading-relaxed">
-          Top Rated PPF instalation in
-          <span class="text-white">Los Angeles, California</span>
+          Top Rated PPF instalation in Santa Monica, California
         </p>
 
         <!-- Service Pills -->
@@ -296,7 +298,7 @@
 
             <!-- Image -->
             <div class="h-65">
-              <img src="img/fullppf.webp" class="w-full h-full object-cover" />
+              <img src="img/pages/ppf/fullppf.webp" class="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -340,7 +342,7 @@
 
             <!-- Image -->
             <div class="h-65">
-              <img src="img/frontppf.webp" class="w-full h-full object-cover" />
+              <img src="img/pages/ppf/frontppf.webp" class="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -735,8 +737,48 @@
       </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="py-10 px-4">
+      <div
+        class="max-w-3xl mx-auto rounded-3xl p-6 md:p-10 text-center relative bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.3)]">
+        <!-- мягкий glow -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-3xl"></div>
+
+        <div class="relative z-10">
+          <!-- логотип -->
+          <div
+            class="w-10 h-10 mx-auto mb-4 flex items-center justify-center rounded-xl border border-white/10 bg-white/5">
+            <span class="font-display font-bold text-lg">S</span>
+          </div>
+
+          <!-- текст -->
+          <h2 class="font-display font-bold text-xl md:text-3xl mb-2">Ready to Transform?</h2>
+          <p class="text-gray-400 text-sm mb-6 max-w-md mx-auto">
+            Schedule your consultation today.
+          </p>
+
+          <!-- кнопки -->
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+18187779402"
+              class="px-6 py-3 rounded-full bg-white text-black text-sm font-medium tracking-wide hover:opacity-90 transition flex items-center justify-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              (818) 877-9402
+            </a>
+
+            <button
+              onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
+              class="px-6 py-3 rounded-full text-sm font-medium tracking-wide border border-white/10 hover:bg-white/5 transition">
+              Book Online
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Bento Grid -->
-    <section id="services" class="py-20 px-6">
+    <section id="services" class="pt-12 pb-20 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="mb-16">
           <div>
@@ -1249,9 +1291,15 @@
             <h4 class="font-display font-medium text-sm mb-6 tracking-wider">Services</h4>
             <ul class="space-y-3 text-xs text-gray-500">
               <li>
-                <a href="#" class="hover:text-[#0184FF] transition-colors">Paint Protection</a>
+                <a href="paintprotectionfilm.html" class="hover:text-[#0184FF] transition-colors"
+                  >Paint Protection</a
+                >
               </li>
-              <li><a href="#" class="hover:text-[#0184FF] transition-colors">Vinyl Wraps</a></li>
+              <li>
+                <a href="vinyl-wraps.html" class="hover:text-[#0184FF] transition-colors"
+                  >Vinyl Wraps</a
+                >
+              </li>
               <li><a href="#" class="hover:text-[#0184FF] transition-colors">Window Tint</a></li>
               <li>
                 <a href="#" class="hover:text-[#0184FF] transition-colors">Ceramic Coating</a>
@@ -1264,8 +1312,9 @@
           <div>
             <h4 class="font-display font-medium text-sm mb-6 tracking-wider">Company</h4>
             <ul class="space-y-3 text-xs text-gray-500">
-              <li><a href="#" class="hover:text-[#0184FF] transition-colors">About Us</a></li>
-              <li><a href="#" class="hover:text-[#0184FF] transition-colors">Why choose us</a></li>
+              <li>
+                <a href="about.html" class="hover:text-[#0184FF] transition-colors">About Us</a>
+              </li>
               <li><a href="#" class="hover:text-[#0184FF] transition-colors">Gallery</a></li>
             </ul>
           </div>
