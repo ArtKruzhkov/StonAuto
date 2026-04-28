@@ -215,6 +215,12 @@ body {
 .swiper-button-next::after {
   font-size: 20px;
   color: white;
+  transition: color 0.3s ease;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: #0184ff;
 }
 
 .vinylwrap-img {

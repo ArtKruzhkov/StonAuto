@@ -86,4 +86,12 @@ document.addEventListener('DOMContentLoaded', function () {
       1024: { slidesPerView: 3 },
     },
   });
+
+  const parallaxImgs = document.querySelectorAll('.parallax-img');
+
+  window.addEventListener('scroll', () => {
+    parallaxImgs.forEach((img) => {
+      img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+    });
+  });
 });
