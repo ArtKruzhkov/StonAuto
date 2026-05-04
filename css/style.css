@@ -242,8 +242,65 @@ body {
   }
 }
 
+.vinylwrap-hero {
+  object-position: center 60%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 525px) {
+  .vinylwrap-hero {
+    object-position: 70% center;
+  }
+}
+
+@media (min-width: 525px) and (max-width: 640px) {
+  .vinylwrap-hero {
+    object-position: 60% center;
+  }
+}
+
 .vinylwrap-img {
   object-position: center 72%;
+}
+
+.windowtint-hero {
+  object-position: center 32%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .windowtint-hero {
+    object-position: 70% center;
+  }
+}
+
+.ceramic-hero {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .ceramic-hero {
+    object-position: 70% center;
+  }
+}
+
+.ceramic-process-img {
+  object-position: center 12%;
+  height: 580px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1072px) {
+  .ceramic-process-img {
+    height: auto;
+  }
 }
 
 .review-card {
