@@ -87,11 +87,37 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
+  // const parallaxImgs = document.querySelectorAll('.parallax-img');
+
+  // window.addEventListener('scroll', () => {
+  //   parallaxImgs.forEach((img) => {
+  //     img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+  //   });
+  // });
+
   const parallaxImgs = document.querySelectorAll('.parallax-img');
 
-  window.addEventListener('scroll', () => {
-    parallaxImgs.forEach((img) => {
-      img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-    });
+  parallaxImgs.forEach((img) => {
+    if (img.src.includes('legal-hero')) {
+      img.dataset.scale = '1.2';
+    }
   });
+
+  function updateParallax() {
+    const isDesktop = window.innerWidth >= 1280;
+
+    parallaxImgs.forEach((img) => {
+      const y = window.scrollY * 0.3;
+      const scale = img.dataset.scale;
+
+      if (scale && isDesktop) {
+        img.style.transform = `translateY(${y}px) scaleY(${scale})`;
+      } else {
+        img.style.transform = `translateY(${y}px)`;
+      }
+    });
+  }
+
+  updateParallax();
+  window.addEventListener('scroll', updateParallax);
 });
