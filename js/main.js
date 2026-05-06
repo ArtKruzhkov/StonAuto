@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // emailJS init
+  emailjs.init('aIhEVF8GV6cy8D_Rt');
+
   // Initialize Icons
   lucide.createIcons();
 
@@ -39,23 +42,67 @@ document.addEventListener('DOMContentLoaded', function () {
   //   observer.observe(el);
   // });
 
-  // Forms
-  document.querySelectorAll('form').forEach((form) => {
-    form.addEventListener('submit', (e) => {
+  // Contact Form
+  const contactForm = document.getElementById('contact-form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      if (!contactForm.checkValidity()) return;
+
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
+
+      const btn = contactForm.querySelector('button[type="submit"]');
       const originalText = btn.innerHTML;
 
-      btn.innerHTML = 'Sent!';
-      btn.classList.add('bg-green-500');
+      // date
+      const now = new Date();
 
-      setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.classList.remove('bg-green-500');
-        form.reset();
-      }, 3000);
+      const formatted = now.toLocaleString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      contactForm.date_time.value = formatted;
+
+      // loading state
+
+      btn.innerHTML = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        // Send Email
+        await emailjs.sendForm('service_gwtm3nr', 'template_3koqg5z', contactForm);
+
+        // Success
+        btn.innerHTML = 'Sent!';
+        btn.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600');
+        btn.classList.add('bg-green-500');
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-green-500');
+          btn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600');
+          btn.disabled = false;
+          contactForm.reset();
+        }, 2500);
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        btn.innerHTML = 'Error!';
+        btn.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600');
+        btn.classList.add('bg-red-500');
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('bg-red-500');
+          btn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-blue-600');
+          btn.disabled = false;
+        }, 2500);
+      }
     });
-  });
+  }
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
