@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 :root {
   --noise-opacity: 0.03;
   --glass-border: rgba(255, 255, 255, 0.08);
@@ -211,6 +213,46 @@ body {
     width: 200px;
     height: auto;
   }
+}
+
+.footer-link {
+  display: inline-block;
+  width: 60%;
+  padding: 4px 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #0184ff;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-link {
+    width: 100%;
+  }
+}
+
+.footer-link_phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 75%;
+  padding: 4px 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-link_phone {
+    width: 100%;
+  }
+}
+
+.footer-link_phone:hover {
+  color: #0184ff;
 }
 
 .swiper-button-prev,
