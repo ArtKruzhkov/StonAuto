@@ -136,11 +136,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // const parallaxImgs = document.querySelectorAll('.parallax-img');
 
-  // window.addEventListener('scroll', () => {
-  //   parallaxImgs.forEach((img) => {
-  //     img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-  //   });
+  // parallaxImgs.forEach((img) => {
+  //   if (img.src.includes('legal-hero')) {
+  //     img.dataset.scale = '1.2';
+  //   }
   // });
+
+  // function updateParallax() {
+  //   const isDesktop = window.innerWidth >= 1280;
+
+  //   parallaxImgs.forEach((img) => {
+  //     const y = window.scrollY * 0.3;
+  //     const scale = img.dataset.scale;
+
+  //     if (scale && isDesktop) {
+  //       img.style.transform = `translateY(${y}px) scaleY(${scale})`;
+  //     } else {
+  //       img.style.transform = `translateY(${y}px)`;
+  //     }
+  //   });
+  // }
+
+  // updateParallax();
+  // window.addEventListener('scroll', updateParallax);
 
   const parallaxImgs = document.querySelectorAll('.parallax-img');
 
@@ -150,21 +168,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  let latestScroll = 0;
+  let ticking = false;
+
   function updateParallax() {
     const isDesktop = window.innerWidth >= 1280;
 
     parallaxImgs.forEach((img) => {
-      const y = window.scrollY * 0.3;
+      const y = latestScroll * 0.3;
       const scale = img.dataset.scale;
 
       if (scale && isDesktop) {
-        img.style.transform = `translateY(${y}px) scaleY(${scale})`;
+        img.style.transform = `translate3d(0, ${y}px, 0) scaleY(${scale})`;
       } else {
-        img.style.transform = `translateY(${y}px)`;
+        img.style.transform = `translate3d(0, ${y}px, 0)`;
       }
     });
+
+    ticking = false;
   }
 
+  window.addEventListener('scroll', () => {
+    latestScroll = window.scrollY;
+
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  });
+
   updateParallax();
-  window.addEventListener('scroll', updateParallax);
 });

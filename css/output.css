@@ -1216,13 +1216,6 @@
       color: var(--color-black);
     }
   }
-  .hover\:bg-\[\#0184FF\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #0184FF;
-      }
-    }
-  }
   .hover\:bg-white\/5 {
     &:hover {
       @media (hover: hover) {
@@ -1718,6 +1711,11 @@ body {
 .text-shadow-glow {
   text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
 }
+.parallax-img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 .service-card {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
@@ -1780,6 +1778,18 @@ body {
 }
 .nav-link.active {
   color: #0184ff;
+}
+.social-link {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+.social-link:hover {
+  background-color: #0184ff;
 }
 .service-pill {
   display: inline-block;

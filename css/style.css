@@ -77,6 +77,12 @@ body {
   text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
 }
 
+.parallax-img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* Service Cards */
 .service-card {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -168,6 +174,20 @@ body {
 
 .nav-link.active {
   color: #0184ff;
+}
+
+.social-link {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #0184ff;
 }
 
 .service-pill {
